@@ -12,6 +12,7 @@
         <header id="header">
             <div class="logo">
                 <span class="icon fa-gem"></span>
+                <!--<img src="images/logo.jpg" alt="Logo" />-->
             </div>
             <div class="content">
                 <div class="inner">
@@ -22,49 +23,70 @@
             <nav>
                 <ul>
                     <!--Menu-->
-                    <li><a href="#item1">Item1</a></li>
-                    <li><a href="#item2">Item2</a></li>
-                    <li><a href="#item3">Item3</a></li>
-                    <li><a href="#item4">Item4</a></li>
-                    <li><a href="#item5">Item5</a></li>
+                    <li><a href="#research">Research</a></li>
+                    <li><a href="#cv">CV</a></li>
+                    <li><a href="#blog">Blog</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#contact">Contact</a></li>
                 </ul>
             </nav>
         </header>
         <div id="main">
-            <!--contents for item1-->
-            <article id="item1">
-                <h2 class="major">Item1</h2>
+            <!--contents for research-->
+            <article id="research">
+                <h2 class="major">Research</h2>
                 <span class="image main"><img src="images/pic_item1.jpg" alt="" /></span>
                 <p>Item1 body text 1. Item1 body text 2.</p>
                 <p>Item1 body text /n.</p>
             </article>
-            <!--contents for item2-->
-            <article id="item2">
-                <h2 class="major">Item2</h2>
+            <!--contents for cv-->
+            <article id="cv">
+                <h2 class="major">CV</h2>
                 <span class="image main"><img src="images/pic_item2.jpg" alt="" /></span>
                 <p>Item2 body text 1. Item2 body text 2.</p>
                 <p>Item2 body text /n.</p>
             </article>
-            <!--contents for item3-->
-            <article id="item3">
-                <h2 class="major">Item1</h2>
+            <!--contents for blog-->
+            <article id="blog">
+                <h2 class="major">Blog</h2>
                 <span class="image main"><img src="images/pic_item3.jpg" alt="" /></span>
                 <p>Item3 body text 1. Item3 body text 2.</p>
                 <p>Item3 body text /n.</p>
             </article>
-            <!--contents for item4-->
-            <article id="item4">
-                <h2 class="major">Item1</h2>
+            <!--contents for about-->
+            <article id="about">
+                <h2 class="major">About</h2>
                 <span class="image main"><img src="images/pic_item4.jpg" alt="" /></span>
                 <p>Item4 body text 1. Item4 body text 2.</p>
                 <p>Item4 body text /n.</p>
             </article>
-            <!--contents for item5-->
-            <article id="item5">
-                <h2 class="major">Item1</h2>
-                <span class="image main"><img src="images/pic_item5.jpg" alt="" /></span>
-                <p>Item5 body text 1. Item5 body text 2.</p>
-                <p>Item5 body text /n.</p>
+            <!--contents for contact-->
+            <article id="contact">
+                <h2 class="major">Contact</h2>
+                <!--<span class="image main"><img src="images/pic_item5.jpg" alt="" /></span>-->
+                <form method="post" action="#">
+                    <div class="fields">
+                        <div class="field half">
+                            <label for="name">Name</label>
+                            <input type="text" name="name" id="name" />
+                        </div>
+                        <div class="field half">
+                            <label for="email">Email</label>
+                            <input type="text" name="email" id="email" />
+                        </div>
+                        <div class="field">
+                            <label for="message">Message</label>
+                            <textarea name="message" id="message" rows="4"></textarea>
+                        </div>
+                    </div>
+                    <ul class="actions">
+                        <li><input type="submit" value="Send Message" class="primary" /></li>
+                        <li><input type="reset" value="Reset" /></li>
+                    </ul>
+                </form>
+                <ul class="icons">
+                    <li><a href="#" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
+                </ul>
             </article>
         </div>
         <footer id="footer">
