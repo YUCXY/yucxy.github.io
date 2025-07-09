@@ -293,7 +293,7 @@
 
 				// Close.
 					// $('<div class="close">Close</div>')
-					$('<a href="#header" class="close">Close</a>')
+					$('<a href="#header" class="close">X</a>')
 						.appendTo($this)
 						.on('click', function() {
 							location.hash = '';
