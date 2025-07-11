@@ -610,6 +610,8 @@ input, select, textarea {
 			-moz-osx-font-smoothing: grayscale;
 			-webkit-font-smoothing: antialiased;
 			display: inline-block;
+			font-style: normal;
+			font-variant: normal;
 			text-rendering: auto;
 			line-height: 1;
 			text-transform: none !important;
