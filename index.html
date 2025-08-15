@@ -52,24 +52,22 @@
                         <li>Finally, the semantically closest resource is returned as the best-matching answer to search</li>
                     </ol>
                 </p>
+                <pre>
                 <code>
                     # load and split text
                     loader = PyPDFLoader(file_path)
                     docs = loader.load()
                     text_splitter = RecursiveCharacterTextSplitter(chunk_size=1000, chunk_overlap=200, add_start_index=True)
-                    all_splits = text_splitter.split_documents(docs) \n
-                </code>
-                <code>
+                    all_splits = text_splitter.split_documents(docs)
                     # create vector store and store text embeddings
                     embedding_model = HuggingFaceEmbeddings(model_name=embedding_name)
                     vector_store = InMemoryVectorStore(embeddings)
                     _ = vector_store.add_documents(documents=all_splits)
-                </code>
-                <code>
                     # query and get top semantic result
                     results = vector_store.similarity_search(question)
                     top = results[0].page_content
                 </code>
+                </pre>
                 <p></p>
                 <h6>Skills used: Python, PyTorch, Pandas, LangChain, HuggingFace, HuggingFace Spaces, Gradio, html</h6>
                 <a href="#semsearch_demo">Click here for a demo on semantic search</a>
