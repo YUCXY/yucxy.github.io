@@ -22,7 +22,7 @@
             <nav>
                 <ul>
                     <!--Menu-->
-                    <li><a href="#research">Research</a></li>
+                    <li><a href="#projects">Projects</a></li>
                     <li><a href="#cv">CV</a></li>
                     <li><a href="#about">About</a></li>
                     <li><a href="#blog">Blog</a></li>
@@ -32,12 +32,48 @@
         </header>
         <div id="main">
             <!--contents for research-->
-            <article id="research">
+            <article id="projects">
                 <!-- <a href="#header" class="close"></a> -->
-                <h2 class="major">Research</h2>
-                <h3 class="major">RESEARCH INTERESTS</h3>
-                <blockquote>Medical Image Analysis, Large Language Models (LLMs), Image Enhancement, Medical Report Generation, Video Understanding</blockquote>
-                <h6 class="major">To be further updated...</h6>
+                <h2 class="major">Projects</h2>
+                
+                <h3 class="major">SEMANTIC SEARCH</h3>
+                <h5>Purpose: To build a completely open-source applet using both front- and back-end techniques, to demonstrate an important concept in natural language processing (NLP) which is semantic searching.</h5>
+                <p>A common use of natural language today is to search the plethora of resources available online. A preliminary method is lexical search, which returns results based on the number of matching words and sometimes matching order of words from the search phrase.
+                    However, often what we are searching for are resources with matching meaning, which do not necessarily have the greatest number of matching words. As such, semantic search, which returns results based on matching meaning instead, is preferred.
+                </p>
+                <p>The underlying mechanism of semantic search is as follows:
+                    <span class="image"><img src="images/semantic_search.png" alt="" /></span>
+                    <ol>
+                        <li>Raw language is first split into meaningful pieces, commonly by words or partial words, called chunks</li>
+                        <li>These chunks are passed to a trained large language model (LLM) which has learned how to best represent the semantic meaning behind each chunk in the form of a vector</li>
+                        <li>When a question or query is searched, it is also split into chunks and vectorized, so that both the search and underlying resources are in similar, comparable forms</li>
+                        <li>Since vectors are already semantic representations of the search and resources, the most relevant resource should be the closest to the search in the vector space</li>
+                        <li>As such, we can use a distance measurement such as cosine distance, to find the resource which is closest to the search</li>
+                        <li>Finally, the semantically closest resource is returned as the best-matching answer to search</li>
+                    </ol>
+                </p>
+                <code>
+                    # load and split text
+                    loader = PyPDFLoader(file_path)
+                    docs = loader.load()
+                    text_splitter = RecursiveCharacterTextSplitter(chunk_size=1000, chunk_overlap=200, add_start_index=True)
+                    all_splits = text_splitter.split_documents(docs)
+
+                    # create vector store and store text embeddings
+                    embedding_model = HuggingFaceEmbeddings(model_name=embedding_name)
+                    vector_store = InMemoryVectorStore(embeddings)
+                    _ = vector_store.add_documents(documents=all_splits)
+
+                    # query and get top semantic result
+                    results = vector_store.similarity_search(question)
+                    top = results[0].page_content
+                </code>
+                <h6>Skills used: Python, PyTorch, Pandas, LangChain, HuggingFace, HuggingFace Spaces, Gradio, html</h6>
+                <a href="#semsearch_demo">Click here for a demo on semantic search</a>
+                <a href="">Link to code on GitHub here.</a>
+            </article>
+            <article id="semsearch_demo">
+                <h2 class="major">Semantic Search Demo</h2>
             </article>
             <!--contents for cv-->
             <article id="cv">
