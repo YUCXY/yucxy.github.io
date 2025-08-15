@@ -35,7 +35,7 @@
             <article id="projects">
                 <!-- <a href="#header" class="close"></a> -->
                 <h2 class="major">Projects</h2>
-                
+
                 <h3 class="major">SEMANTIC SEARCH</h3>
                 <h5>Purpose: To build a completely open-source applet using both front- and back-end techniques, to demonstrate an important concept in natural language processing (NLP) which is semantic searching.</h5>
                 <p>A common use of natural language today is to search the plethora of resources available online. A preliminary method is lexical search, which returns results based on the number of matching words and sometimes matching order of words from the search phrase.
@@ -58,18 +58,22 @@
                     docs = loader.load()
                     text_splitter = RecursiveCharacterTextSplitter(chunk_size=1000, chunk_overlap=200, add_start_index=True)
                     all_splits = text_splitter.split_documents(docs)
-
+                </code>
+                <code>
                     # create vector store and store text embeddings
                     embedding_model = HuggingFaceEmbeddings(model_name=embedding_name)
                     vector_store = InMemoryVectorStore(embeddings)
                     _ = vector_store.add_documents(documents=all_splits)
-
+                </code>
+                <code>
                     # query and get top semantic result
                     results = vector_store.similarity_search(question)
                     top = results[0].page_content
                 </code>
+                <p></p>
                 <h6>Skills used: Python, PyTorch, Pandas, LangChain, HuggingFace, HuggingFace Spaces, Gradio, html</h6>
                 <a href="#semsearch_demo">Click here for a demo on semantic search</a>
+                <p></p>
                 <a href="">Link to code on GitHub here.</a>
             </article>
             <article id="semsearch_demo">
