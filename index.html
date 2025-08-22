@@ -115,7 +115,7 @@
             </article>
             <article id="semsearch_with_chat_demo">
                 <h2 class="major">Semantic Search with Chat Demo</h2>
-                <iframe
+                <!-- <iframe
                     src="https://yucxy-semsearch-chat-demo.hf.space"
                     frameborder="0"
                     width="850"
@@ -125,6 +125,39 @@
                 <p></p>
                 <a href="#projects">Back to Projects</a>
             </article>
+
+            <script>
+                // Function to adjust iframe height based on content
+                function adjustIframeHeight() {
+                    const iframe = document.querySelector('.responsive-iframe');
+                    const container = document.querySelector('.aspect-ratio-box');
+                    
+                    // Try to communicate with iframe content (if same-origin)
+                    try {
+                        iframe.onload = function() {
+                            // This would work only if the iframe content is from the same origin
+                            // For cross-origin iframes, we need to use other techniques
+                            const iframeContentHeight = iframe.contentWindow.document.body.scrollHeight;
+                            if (iframeContentHeight > 0) {
+                                // Adjust the container's aspect ratio
+                                const newAspectRatio = (iframeContentHeight / iframe.offsetWidth) * 100;
+                                container.style.paddingTop = newAspectRatio + '%';
+                            }
+                        };
+                    } catch (e) {
+                        // Cross-origin issue, use a different approach
+                        console.log("Cross-origin iframe, using fixed aspect ratio");
+                    }
+                }
+                
+                // Adjust on window resize
+                window.addEventListener('resize', adjustIframeHeight);
+                
+                // Initial adjustment
+                window.addEventListener('load', adjustIframeHeight);
+            </script>
+
+            
             <!--contents for cv-->
             <article id="cv">
                 <!-- <a href="#header" class="close"></a> -->
