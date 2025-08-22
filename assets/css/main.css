@@ -1658,7 +1658,7 @@ input, select, textarea {
 	/* Fixed height iframe */
 	.fixed-height-iframe {
 		width: 100%;
-		height: 600px; /* Fixed height to show all content */
+		height: 800px; /* Fixed height to show all content */
 		border: none;
 		max-width: 850px; /* Maximum width to maintain good proportions */
 	}
@@ -1666,7 +1666,7 @@ input, select, textarea {
 	/* Responsive adjustments */
 	@media screen and (max-width: 900px) {
 		.fixed-height-iframe {
-			height: 550px; /* Slightly reduce height on smaller screens */
+			height: 750px; /* Slightly reduce height on smaller screens */
 		}
 	}
 
@@ -1685,7 +1685,7 @@ input, select, textarea {
 		}
 
 		.fixed-height-iframe {
-			height: 500px;
+			height: 600px;
 		}
 	}
 	
