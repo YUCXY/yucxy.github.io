@@ -99,7 +99,6 @@ input, select, textarea {
 		display: flex; /**/
 		justify-content: center; /**/
 		align-items: center; /**/
-		min-height: 200vh; /**/
 	}
 
 		body.is-preload *, body.is-preload *:before, body.is-preload *:after {
