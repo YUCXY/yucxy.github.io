@@ -122,7 +122,6 @@
                             src="https://yucxy-semsearch-chat-demo.hf.space"
                             allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
                             allowfullscreen
-                            width="600"
                         ></iframe>
                     </div>
                 </div>
@@ -134,34 +133,25 @@
             </article>
 
             <script>
-                // Function to adjust iframe height based on content
-                function adjustIframeHeight() {
-                    const iframe = document.querySelector('.responsive-iframe');
-                    const container = document.querySelector('.aspect-ratio-box');
+                // Function to maintain iframe proportions
+                function maintainIframeProportions() {
+                    const iframe = document.querySelector('.fixed-height-iframe');
+                    const container = document.querySelector('.iframe-container');
+                    const windowWidth = window.innerWidth;
                     
-                    // Try to communicate with iframe content (if same-origin)
-                    try {
-                        iframe.onload = function() {
-                            // This would work only if the iframe content is from the same origin
-                            // For cross-origin iframes, we need to use other techniques
-                            const iframeContentHeight = iframe.contentWindow.document.body.scrollHeight;
-                            if (iframeContentHeight > 0) {
-                                // Adjust the container's aspect ratio
-                                const newAspectRatio = (iframeContentHeight / iframe.offsetWidth) * 100;
-                                container.style.paddingTop = newAspectRatio + '%';
-                            }
-                        };
-                    } catch (e) {
-                        // Cross-origin issue, use a different approach
-                        console.log("Cross-origin iframe, using fixed aspect ratio");
+                    // Adjust max-width based on window size for better proportions
+                    if (windowWidth < 900) {
+                        iframe.style.maxWidth = '100%';
+                    } else {
+                        iframe.style.maxWidth = '850px';
                     }
                 }
                 
                 // Adjust on window resize
-                window.addEventListener('resize', adjustIframeHeight);
+                window.addEventListener('resize', maintainIframeProportions);
                 
                 // Initial adjustment
-                window.addEventListener('load', adjustIframeHeight);
+                window.addEventListener('load', maintainIframeProportions);
             </script>
 
             
