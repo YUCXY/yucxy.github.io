@@ -96,6 +96,9 @@ input, select, textarea {
 
 	body {
 		background: #1b1f22;
+		display: flex; /**/
+		justify-content: center; /**/
+		align-items: center; /**/
 	}
 
 		body.is-preload *, body.is-preload *:before, body.is-preload *:after {
@@ -1624,6 +1627,63 @@ input, select, textarea {
 			}
 
 		}
+
+	/*iframe-container*/
+	.iframe-container {
+		position: relative;
+		overflow: hidden;
+		width: 100%;
+		border-radius: 4px;
+		margin-bottom: 1.5rem;
+		border: solid 1px rgba(255, 255, 255, 0.2);
+	}
+
+	/* Responsive iframe */
+	.responsive-iframe {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		border: none;
+	}
+
+	.aspect-ratio-box {
+		position: relative;
+		width: 100%;
+		height: 0;
+		padding-top: 56.25%; /* 16:9 Aspect Ratio */
+	}
+
+	/* Responsive adjustments */
+	@media screen and (max-width: 768px) {
+		article {
+			padding: 1.5rem;
+		}
+		
+		h2.major {
+			font-size: 1.2rem;
+			letter-spacing: 0.1rem;
+		}
+		
+		.aspect-ratio-box {
+			padding-top: 75%; /* 4:3 Aspect Ratio for smaller screens */
+		}
+	}
+	
+	@media screen and (max-width: 480px) {
+		body {
+			padding: 10px;
+		}
+		
+		article {
+			padding: 1rem;
+		}
+		
+		h2.major {
+			font-size: 1rem;
+		}
+	}
 
 /* Footer */
 
